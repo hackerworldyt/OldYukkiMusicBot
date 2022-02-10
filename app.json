@@ -1,7 +1,7 @@
 {
-  "name": "Yukki Music Bot",
+  "name": "Yukki Modified By Hw",
   "description": "A Telegram Music Bot with proper functions written in Python with Pyrogram and Py-Tgcalls.",
-  "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
+  "logo": "https://telegra.ph/file/1491fa0d0630bae0c883e.jpg",
   "keywords": [
   "python3",
   "telegram",
@@ -45,12 +45,12 @@
     },
     "MUSIC_BOT_NAME": {
       "description": "A name for your Music Bot.",
-      "value": "",
+      "value": "https://t.me/CFC_BOT_SUPPORT",
       "required": true
     },
     "SUPPORT_CHANNEL": {
       "description": "Support Channel Link if you have any, Leave blank if no support. Your link must start with https://t.me/",
-      "value": "",
+      "value": "https://t.me/HwMusicUpdates",
       "required": false
     },
     "SUPPORT_GROUP": {
@@ -65,7 +65,7 @@
     },
     "START_IMG_URL": {
       "description": "Telegraph Image Link for the Private Start Message",
-      "value": "",
+      "value": "https://telegra.ph/file/1491fa0d0630bae0c883e.jpg",
       "required": false
     },
     "STRING_SESSION1": {

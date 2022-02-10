@@ -112,7 +112,6 @@ def search_markup(
     ]
     return buttons
 
-
 def search_markup2(
     ID6,
     ID7,

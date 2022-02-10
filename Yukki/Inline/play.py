@@ -112,6 +112,7 @@ def search_markup(
     ]
     return buttons
 
+
 def search_markup2(
     ID6,
     ID7,
@@ -169,16 +170,13 @@ def search_markup2(
 def secondary_markup(videoid, user_id):
     buttons = [
         [
-            InlineKeyboardButton(text="▶️", callback_data=f"resumecb"),
-            InlineKeyboardButton(text="⏸️", callback_data=f"pausecb"),
-            InlineKeyboardButton(text="⏭️", callback_data=f"skipcb"),
-            InlineKeyboardButton(text="⏹️", callback_data=f"stopcb"),
-        ],
-        [
             InlineKeyboardButton(
-                text="🔗 More Menu", callback_data=f"other {videoid}|{user_id}"
+                text="✨ Updates", url="https://t.me/HwMusicUpdates"
             ),
-            InlineKeyboardButton(text="🗑 Close Menu", callback_data=f"close"),
+            InlineKeyboardButton(
+                text="✨ Owner", url="https://t.me/iamhackerworld"
+            ),
+            InlineKeyboardButton(text="📣 Support", url="https://t.me/CFC_BOT_SUPPORT"),
         ],
     ]
     return buttons
@@ -187,13 +185,13 @@ def secondary_markup(videoid, user_id):
 def secondary_markup2(videoid, user_id):
     buttons = [
         [
-            InlineKeyboardButton(text="▶️", callback_data=f"resumecb"),
-            InlineKeyboardButton(text="⏸️", callback_data=f"pausecb"),
-            InlineKeyboardButton(text="⏭️", callback_data=f"skipcb"),
-            InlineKeyboardButton(text="⏹️", callback_data=f"stopcb"),
-        ],
-        [
-            InlineKeyboardButton(text="🗑 Close Menu", callback_data=f"close"),
+            InlineKeyboardButton(
+                text="✨ Updates", url="https://t.me/HwMusicUpdates"
+            ),
+            InlineKeyboardButton(
+                text="✨ Owner", url="https://t.me/iamhackerworld"
+            ),
+            InlineKeyboardButton(text="📣 Support", url="https://t.me/CFC_BOT_SUPPORT"),
         ],
     ]
     return buttons
@@ -206,21 +204,12 @@ def primary_markup(videoid, user_id, current_time, total_time):
     buttons = [
         [
             InlineKeyboardButton(
-                text=f"{total_time} ------------------ {current_time}",
-                callback_data=f"timer_checkup_markup {videoid}|{user_id}",
-            )
-        ],
-        [
-            InlineKeyboardButton(text="▶️", callback_data=f"resumecb"),
-            InlineKeyboardButton(text="⏸️", callback_data=f"pausecb"),
-            InlineKeyboardButton(text="⏭️", callback_data=f"skipcb"),
-            InlineKeyboardButton(text="⏹️", callback_data=f"stopcb"),
-        ],
-        [
-            InlineKeyboardButton(
-                text="🔗 More Menu", callback_data=f"other {videoid}|{user_id}"
+                text="✨ Updates", url="https://t.me/HwMusicUpdates"
             ),
-            InlineKeyboardButton(text="🗑 Close Menu", callback_data=f"close"),
+            InlineKeyboardButton(
+                text="✨ Owner", url="https://t.me/iamhackerworld"
+            ),
+            InlineKeyboardButton(text="📣 Support", url="https://t.me/CFC_BOT_SUPPORT"),
         ],
     ]
     return buttons
@@ -230,21 +219,12 @@ def timer_markup(videoid, user_id, current_time, total_time):
     buttons = [
         [
             InlineKeyboardButton(
-                text=f"{total_time} ------------------ {current_time}",
-                callback_data=f"timer_checkup_markup {videoid}|{user_id}",
-            )
-        ],
-        [
-            InlineKeyboardButton(text="▶️", callback_data=f"resumecb"),
-            InlineKeyboardButton(text="⏸️", callback_data=f"pausecb"),
-            InlineKeyboardButton(text="⏭️", callback_data=f"skipcb"),
-            InlineKeyboardButton(text="⏹️", callback_data=f"stopcb"),
-        ],
-        [
-            InlineKeyboardButton(
-                text="🔗 More Menu", callback_data=f"other {videoid}|{user_id}"
+                text="✨ Updates", url="https://t.me/HwMusicUpdates"
             ),
-            InlineKeyboardButton(text="🗑 Close Menu", callback_data=f"close"),
+            InlineKeyboardButton(
+                text="✨ Owner", url="https://t.me/iamhackerworld"
+            ),
+            InlineKeyboardButton(text="📣 Support", url="https://t.me/CFC_BOT_SUPPORT"),
         ],
     ]
     return buttons
@@ -257,17 +237,13 @@ def audio_markup(videoid, user_id, current_time, total_time):
     buttons = [
         [
             InlineKeyboardButton(
-                text=f"{total_time} ------------------ {current_time}",
-                callback_data=f"timer_checkup_markup {videoid}|{user_id}",
-            )
+                text="✨ Updates", url="https://t.me/HwMusicUpdates"
+            ),
+            InlineKeyboardButton(
+                text="✨ Owner", url="https://t.me/iamhackerworld"
+            ),
+            InlineKeyboardButton(text="📣 Support", url="https://t.me/CFC_BOT_SUPPORT"),
         ],
-        [
-            InlineKeyboardButton(text="▶️", callback_data=f"resumecb"),
-            InlineKeyboardButton(text="⏸️", callback_data=f"pausecb"),
-            InlineKeyboardButton(text="⏭️", callback_data=f"skipcb"),
-            InlineKeyboardButton(text="⏹️", callback_data=f"stopcb"),
-        ],
-        [InlineKeyboardButton(text="🗑 Close Menu", callback_data=f"close")],
     ]
     return buttons
 
@@ -276,17 +252,13 @@ def audio_timer_markup_start(videoid, user_id, current_time, total_time):
     buttons = [
         [
             InlineKeyboardButton(
-                text=f"{total_time} ------------------ {current_time}",
-                callback_data=f"timer_checkup_markup {videoid}|{user_id}",
-            )
+                text="✨ Updates", url="https://t.me/HwMusicUpdates"
+            ),
+            InlineKeyboardButton(
+                text="✨ Owner", url="https://t.me/iamhackerworld"
+            ),
+            InlineKeyboardButton(text="📣 Support", url="https://t.me/CFC_BOT_SUPPORT"),
         ],
-        [
-            InlineKeyboardButton(text="▶️", callback_data=f"resumecb"),
-            InlineKeyboardButton(text="⏸️", callback_data=f"pausecb"),
-            InlineKeyboardButton(text="⏭️", callback_data=f"skipcb"),
-            InlineKeyboardButton(text="⏹️", callback_data=f"stopcb"),
-        ],
-        [InlineKeyboardButton(text="🗑 Close Menu", callback_data=f"close")],
     ]
     return buttons
 

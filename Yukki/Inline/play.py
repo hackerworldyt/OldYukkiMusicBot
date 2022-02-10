@@ -1,4 +1,3 @@
-
 from pyrogram.types import (CallbackQuery, InlineKeyboardButton,
                             InlineKeyboardMarkup, InputMediaPhoto, Message)
 
@@ -9,30 +8,26 @@ def url_markup(videoid, duration, user_id, query, query_type):
     buttons = [
         [
             InlineKeyboardButton(
-                text="❮",
-                callback_data=f"slider B|{query_type}|{query}|{user_id}",
-            ),
-            InlineKeyboardButton(
-                text="🎵",
+                text="1",
                 callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
             ),
-            InlineKeyboardButton(
-                text="🎥",
-                callback_data=f"Choose {videoid}|{duration}|{user_id}",
+          InlineKeyboardButton(
+                text="2",
+                callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
             ),
-            InlineKeyboardButton(
-                text="❯",
-                callback_data=f"slider F|{query_type}|{query}|{user_id}",
+          InlineKeyboardButton(
+                text="3",
+                callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
             ),
         ],
-        [
+      [
             InlineKeyboardButton(
-                text="🔎 More Results",
-                callback_data=f"Search {query}|{user_id}",
+                text="4",
+                callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
             ),
-            InlineKeyboardButton(
-                text="🗑 Close Search",
-                callback_data=f"forceclose {query}|{user_id}",
+        InlineKeyboardButton(
+                text="5",
+                callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
             ),
         ],
     ]
@@ -43,19 +38,27 @@ def url_markup2(videoid, duration, user_id):
     buttons = [
         [
             InlineKeyboardButton(
-                text="🎵 Play Music",
+                text="1",
                 callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
             ),
-            InlineKeyboardButton(
-                text="🎥 Play Video",
-                callback_data=f"Choose {videoid}|{duration}|{user_id}",
+          InlineKeyboardButton(
+                text="2",
+                callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
+            ),
+          InlineKeyboardButton(
+                text="3",
+                callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
             ),
         ],
         [
             InlineKeyboardButton(
-                text="🗑 Close Search",
-                callback_data=f"forceclose {videoid}|{user_id}",
-            )
+                text="4",
+                callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
+            ),
+          InlineKeyboardButton(
+                text="5",
+                callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
+            ),
         ],
     ]
     return buttons

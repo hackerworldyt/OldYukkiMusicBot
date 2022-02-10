@@ -1,41 +1,4 @@
-from pyrogram.types import (CallbackQuery, InlineKeyboardButton,
-                            InlineKeyboardMarkup, InputMediaPhoto, Message)
 
-from Yukki import db_mem
-
-
-def url_markup(videoid, duration, user_id, query, query_type):
-    buttons = [
-        [
-            InlineKeyboardButton(
-                text="❮",
-                callback_data=f"slider B|{query_type}|{query}|{user_id}",
-            ),
-            InlineKeyboardButton(
-                text="🎵",
-                callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
-            ),
-            InlineKeyboardButton(
-                text="🎥",
-                callback_data=f"Choose {videoid}|{duration}|{user_id}",
-            ),
-            InlineKeyboardButton(
-                text="❯",
-                callback_data=f"slider F|{query_type}|{query}|{user_id}",
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text="🔎 More Results",
-                callback_data=f"Search {query}|{user_id}",
-            ),
-            InlineKeyboardButton(
-                text="🗑 Close Search",
-                callback_data=f"forceclose {query}|{user_id}",
-            ),
-        ],
-    ]
-    return buttons
 
 
 def url_markup2(videoid, duration, user_id):

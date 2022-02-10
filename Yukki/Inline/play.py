@@ -8,56 +8,30 @@ def url_markup(videoid, duration, user_id, query, query_type):
     buttons = [
         [
             InlineKeyboardButton(
-                text="1",
-                callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
+                text="❮",
+                callback_data=f"slider B|{query_type}|{query}|{user_id}",
             ),
-          InlineKeyboardButton(
-                text="2",
-                callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
-            ),
-          InlineKeyboardButton(
-                text="3",
-                callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
-            ),
-        ],
-      [
             InlineKeyboardButton(
-                text="4",
+                text="🎵",
                 callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
             ),
-        InlineKeyboardButton(
-                text="5",
-                callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
-            ),
-        ],
-    ]
-    return buttons
-
-
-def url_markup2(videoid, duration, user_id):
-    buttons = [
-        [
             InlineKeyboardButton(
-                text="1",
-                callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
+                text="🎥",
+                callback_data=f"Choose {videoid}|{duration}|{user_id}",
             ),
-          InlineKeyboardButton(
-                text="2",
-                callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
-            ),
-          InlineKeyboardButton(
-                text="3",
-                callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
+            InlineKeyboardButton(
+                text="❯",
+                callback_data=f"slider F|{query_type}|{query}|{user_id}",
             ),
         ],
         [
             InlineKeyboardButton(
-                text="4",
-                callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
+                text="🔎 More Results",
+                callback_data=f"Search {query}|{user_id}",
             ),
-          InlineKeyboardButton(
-                text="5",
-                callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
+            InlineKeyboardButton(
+                text="🗑 Close Search",
+                callback_data=f"forceclose {query}|{user_id}",
             ),
         ],
     ]

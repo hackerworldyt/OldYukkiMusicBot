@@ -61,7 +61,7 @@ async def play(_, message: Message):
     url = get_url(message)
     if audio:
         mystic = await message.reply_text(
-            "🔄 Processing..."
+            "🔄 Processing Audio... Please Wait!"
         )
         try:
             read = db_mem[message.chat.id]["live_check"]
@@ -81,7 +81,7 @@ async def play(_, message: Message):
         duration_sec = audio.duration
         if (audio.duration) > DURATION_LIMIT:
             return await mystic.edit_text(
-                f"➥ **Duration Limit Exceeded**\n\n**Allowed Duration: **{DURATION_LIMIT_MIN} minute(s)\n**Received Duration:** {duration_min} minute(s)"
+                f"**Duration Limit Exceeded**\n\n**Allowed Duration: **{DURATION_LIMIT_MIN} minute(s)\n**Received Duration:** {duration_min} minute(s)"
             )
         file_name = (
             audio.file_unique_id
@@ -111,7 +111,7 @@ async def play(_, message: Message):
         limit = await get_video_limit(141414)
         if not limit:
             return await message.reply_text(
-                "**➥ No Limit Defined for Video Calls**\n\nSet a Limit for Number of Maximum Video Calls allowed on Bot by /set_video_limit [Sudo Users Only]"
+                "**No Limit Defined for Video Calls**\n\nSet a Limit for Number of Maximum Video Calls allowed on Bot by /set_video_limit [Sudo Users Only]"
             )
         count = len(await get_active_video_chats())
         if int(count) == int(limit):
@@ -119,16 +119,16 @@ async def play(_, message: Message):
                 pass
             else:
                 return await message.reply_text(
-                    "➥ Sorry! Bot only allows limited number of video calls due to CPU overload issues. Many other chats are using video call right now. Try switching to audio or try again later"
+                    "Sorry! Bot only allows limited number of video calls due to CPU overload issues. Many other chats are using video call right now. Try switching to audio or try again later"
                 )
         mystic = await message.reply_text(
-            "🔄 Processing..."
+            "🔄 Processing Video... Please Wait!"
         )
         try:
             read = db_mem[message.chat.id]["live_check"]
             if read:
                 return await mystic.edit(
-                    "➥ Live Streaming Playing...Stop it to play music"
+                    "Live Streaming Playing...Stop it to play music"
                 )
             else:
                 pass
@@ -142,7 +142,7 @@ async def play(_, message: Message):
             mystic,
         )
     elif url:
-        mystic = await message.reply_text("🔄 Processing...")
+        mystic = await message.reply_text("🔄 Processing URL... Please Wait!")
         if not message.reply_to_message:
             query = message.text.split(None, 1)[1]
         else:
@@ -157,8 +157,8 @@ async def play(_, message: Message):
         await mystic.delete()
         buttons = url_markup2(videoid, duration_min, message.from_user.id)
         return await message.reply_photo(
-            photo="https://telegra.ph/file/21d0412ed17209f9f4fc0.jpg",
-            caption=f"1️⃣ **{title[:22]}\n ├ Duration:** {duration_min} Min \n\n 2️⃣ **{title[:20]}\n ├ Duration:** {duration_min} Min\n\n 3️⃣ **{title[:20]}\n ├ Duration:** {duration_min} Min \n\n 4️⃣ **{title[:27]}\n ├ Duration:** {duration_min} Min \n\n 5️⃣ **{title[:22]}\n ├ Duration:** {duration_min} Min",
+            photo=thumb,
+            caption=f"📎Title: **{title}\n\n⏳Duration:** {duration_min} Mins\n\n__[Get Additional Information About Video](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
     else:
@@ -169,7 +169,7 @@ async def play(_, message: Message):
             await message.reply_photo(
                 photo="Utils/Playlist.jpg",
                 caption=(
-                    "**➥ Usage:** /play [Music Name or Youtube Link or Reply to Audio]\n\nIf you want to play Playlists! Select the one from Below."
+                    "**Usage:** /play [Music Name or Youtube Link or Reply to Audio]\n\nIf you want to play Playlists! Select the one from Below."
                 ),
                 reply_markup=InlineKeyboardMarkup(buttons),
             )
@@ -188,8 +188,8 @@ async def play(_, message: Message):
             videoid, duration_min, message.from_user.id, query, 0
         )
         return await message.reply_photo(
-            photo="https://telegra.ph/file/21d0412ed17209f9f4fc0.jpg",
-            caption=f"1️⃣ **{title[:22]}\n ├ Duration:** {duration_min} Min \n\n 2️⃣ **{title[:20]}\n ├ Duration:** {duration_min} Min\n\n 3️⃣ **{title[:20]}\n ├ Duration:** {duration_min} Min \n\n 4️⃣ **{title[:27]}\n ├ Duration:** {duration_min} Min \n\n 5️⃣ **{title[:22]}\n ├ Duration:** {duration_min} Min",
+            photo=thumb,
+            caption=f"📎Title: **{title}\n\n⏳Duration:** {duration_min} Mins\n\n__[Get Additional Information About Video](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
 
@@ -217,22 +217,22 @@ async def Music_Stream(_, CallbackQuery):
     if str(duration) == "None":
         buttons = livestream_markup("720", videoid, duration, user_id)
         return await CallbackQuery.edit_message_text(
-            "**➥Live Stream Detected**\n\nWant to play live stream? This will stop the current playing musics(if any) and will start streaming live video.",
+            "**Live Stream Detected**\n\nWant to play live stream? This will stop the current playing musics(if any) and will start streaming live video.",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
     if CallbackQuery.from_user.id != int(user_id):
         return await CallbackQuery.answer(
-            "➥ This is not for you! Search You Own Song.", show_alert=True
+            "This is not for you! Search You Own Song.", show_alert=True
         )
     await CallbackQuery.message.delete()
     title, duration_min, duration_sec, thumbnail = get_yt_info_id(videoid)
     if duration_sec > DURATION_LIMIT:
         return await CallbackQuery.message.reply_text(
-            f"**➥ Duration Limit Exceeded**\n\n**Allowed Duration: **{DURATION_LIMIT_MIN} minute(s)\n**Received Duration:** {duration_min} minute(s)"
+            f"**Duration Limit Exceeded**\n\n**Allowed Duration: **{DURATION_LIMIT_MIN} minute(s)\n**Received Duration:** {duration_min} minute(s)"
         )
     await CallbackQuery.answer(f"Processing:- {title[:20]}", show_alert=True)
     mystic = await CallbackQuery.message.reply_text(
-        f"➥ **Powered By Hw Music**\n\n{title[:20]}"
+        f"**{MUSIC_BOT_NAME} Downloader**\n\n**Title:** {title[:50]}\n\n0% ▓▓▓▓▓▓▓▓▓▓▓▓ 100%"
     )
     downloaded_file = await loop.run_in_executor(
         None, download, videoid, mystic, title
@@ -262,7 +262,7 @@ async def search_query_more(_, CallbackQuery):
     query, user_id = callback_request.split("|")
     if CallbackQuery.from_user.id != int(user_id):
         return await CallbackQuery.answer(
-            "➥ Search Your Own Music. You're not allowed to use this button.",
+            "Search Your Own Music. You're not allowed to use this button.",
             show_alert=True,
         )
     await CallbackQuery.answer("Searching More Results")

@@ -1,4 +1,67 @@
+from pyrogram.types import (CallbackQuery, InlineKeyboardButton,
+                            InlineKeyboardMarkup, InputMediaPhoto, Message)
 
+from Yukki import db_mem
+
+
+def url_markup(videoid, duration, user_id, query, query_type):
+    buttons = [
+        [
+            InlineKeyboardButton(
+                text="1",
+                callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
+            ),
+          InlineKeyboardButton(
+                text="2",
+                callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
+            ),
+          InlineKeyboardButton(
+                text="3",
+                callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
+            ),
+        ],
+      [
+            InlineKeyboardButton(
+                text="4",
+                callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
+            ),
+        InlineKeyboardButton(
+                text="5",
+                callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
+            ),
+        ],
+    ]
+    return buttons
+
+
+def url_markup2(videoid, duration, user_id):
+    buttons = [
+        [
+            InlineKeyboardButton(
+                text="1",
+                callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
+            ),
+          InlineKeyboardButton(
+                text="2",
+                callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
+            ),
+          InlineKeyboardButton(
+                text="3",
+                callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text="4",
+                callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
+            ),
+          InlineKeyboardButton(
+                text="5",
+                callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
+            ),
+        ],
+    ]
+    return buttons
 
 
 def url_markup2(videoid, duration, user_id):

@@ -300,7 +300,7 @@ async def start_command(_, message):
                     LOG_GROUP_ID,
                     f"{message.from_user.mention} has just started bot to check <code>SUDOLIST</code>\n\n**USER ID:** {sender_id}\n**USER NAME:** {sender_name}",
                 )
-        if name == "help":
+        if name == "helpp":
             text, keyboard = await help_parser(message.from_user.mention)
             await message.delete()
             return await app.send_text(
@@ -424,7 +424,7 @@ async def help_button(client, query):
     mod_match = re.match(r"help_module\((.+?)\)", query.data)
     prev_match = re.match(r"help_prev\((.+?)\)", query.data)
     next_match = re.match(r"help_next\((.+?)\)", query.data)
-    back_match = re.match(r"help_back", query.data)
+    back_match = re.match(r"help_backk", query.data)
     create_match = re.match(r"help_create", query.data)
     top_text = f"""Hello {query.from_user.first_name},
 
@@ -453,7 +453,7 @@ All commands can be used with: /
             [
                 [
                     InlineKeyboardButton(
-                        text="↪️ Back", callback_data="help_back"
+                        text="↪️ Back", callback_data="help_backk"
                     ),
                     InlineKeyboardButton(
                         text="🔄 Close", callback_data="close"

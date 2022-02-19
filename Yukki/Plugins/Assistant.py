@@ -26,7 +26,7 @@ async def assis_change(_, message: Message):
     _assistant = await get_assistant(message.chat.id, "assistant")
     if not _assistant:
         return await message.reply_text(
-            "No Pre-Saved Assistant Found.\n\nYou can set Assistant Via /setassistant"
+            "No Hw Assistant Found.\n\nYou can set Assistant Via /setassistant"
         )
     else:
         ass = _assistant["saveassistant"]
@@ -57,7 +57,7 @@ async def assis_change(_, message: Message):
     _assistant = await get_assistant(message.chat.id, "assistant")
     if not _assistant:
         await message.reply_text(
-            f"**__Yukki Music Bot Assistant Alloted__**\n\nAssistant No. **{ran_ass}**"
+            f"**__Hw Music Bot Assistant Alloted__**\n\nAssistant No. **{ran_ass}**"
         )
         assis = {
             "saveassistant": ran_ass,
@@ -66,7 +66,7 @@ async def assis_change(_, message: Message):
     else:
         ass = _assistant["saveassistant"]
         return await message.reply_text(
-            f"Pre-Saved Assistant Number {ass} Found.\n\nYou can change Assistant Via /changeassistant"
+            f"Hw Assistant Number {ass} Found.\n\nYou can change Assistant Via /changeassistant"
         )
 
 
@@ -75,10 +75,10 @@ async def check_ass(_, message: Message):
     _assistant = await get_assistant(message.chat.id, "assistant")
     if not _assistant:
         return await message.reply_text(
-            "No Pre-Saved Assistant Found.\n\nYou can set Assistant Via /play"
+            "No Hw Assistant Found.\n\nYou can set Assistant Via /play"
         )
     else:
         ass = _assistant["saveassistant"]
         return await message.reply_text(
-            f"Pre-Saved Assistant Found\n\nAssistanty Number {ass} "
+            f"Hw Assistant Found\n\nAssistanty Number {ass} "
         )
